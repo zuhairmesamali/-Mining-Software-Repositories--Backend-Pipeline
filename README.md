@@ -14,7 +14,7 @@ Activate the virtual environment:
 ```
 source .venv/bin/activate
 ```
-*On Windows:
+* On Windows:
 ```
 .venv\Scripts\activate
 ```
@@ -32,5 +32,18 @@ AWS_DEFAULT_REGION=us-east-1
 GITHUB_TOKEN=your_github_token
 ```
 
-##Running the Main Script
+## Running the Main Script
+Run the ```csv_to_rdf.py``` script:
+```
+python RDF/csv_to_rdf.py
+```
+Run the ```rdf2neo4j.py``` script:
+```
+python RDF/rdf2neo4j.py
+```
 
+## Running the GitHub Cross Check Test
+Run the ```github_cross_check.py``` script:
+```
+python test/github_cross_check.py
+```
