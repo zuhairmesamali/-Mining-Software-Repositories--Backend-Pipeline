@@ -1,0 +1,28 @@
+1. Retrieves up to 25 nodes from the database
+MATCH (n) RETURN n LIMIT 25;
+
+2. Find all repositories with more than 10 developers:
+MATCH (r:Repo)
+WHERE r.unique_developers > 10
+RETURN r.origin, r.unique_developers
+ORDER BY r.unique_developers DESC
+
+3. Repositories that are active (age < 500 days) but have high version count:
+MATCH (r:Repo)
+WHERE r.age < 500 AND r.versions > 100
+RETURN r.origin, r.age, r.versions
+ORDER BY r.versions DESC
+
+4. Potentially mature and large-scale projects (high LOC & high devs):
+MATCH (r:Repo)
+WHERE r.unique_developers > 5 AND r.approx_loc > 1000
+RETURN r.origin, r.unique_developers, r.approx_loc
+ORDER BY r.approx_loc DESC
+
+5. Statistical summary (AVG, MIN, MAX)
+MATCH (r:Repo)
+RETURN 
+  avg(r.age) AS avg_age,
+  avg(r.approx_loc) AS avg_loc,
+  avg(r.unique_developers) AS avg_devs,
+  avg(r.versions) AS avg_versions
