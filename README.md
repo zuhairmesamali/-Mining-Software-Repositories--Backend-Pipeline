@@ -9,11 +9,28 @@ Backend data pipeline for mining software repositories, using AWS (S3, Athena) a
 ```
 python3 -m venv .venv
 ```
-
 Activate the virtual environment:
-
-On macOS/Linux:
+* On macOS/Linux:
+```
 source .venv/bin/activate
+```
+*On Windows:
+```
+.venv\Scripts\activate
+```
+Install the required packages:
+```
+pip install -r requirements.txt
+```
 
-On Windows:
+## Environment Variables
+Create a ```.env``` file in the root of the project and add the following variables:
+```
+AWS_ACCESS_KEY_ID=your_key_here
+AWS_SECRET_ACCESS_KEY=your_secret_here
+AWS_DEFAULT_REGION=us-east-1
+GITHUB_TOKEN=your_github_token
+```
+
+##Running the Main Script
 
