@@ -6,7 +6,7 @@ Backend data pipeline for mining software repositories, using AWS (S3, Athena) a
 
 ## Setup
 * Create a virtual environment:
-python3 -m venv .venv
+```python3 -m venv .venv```
 
 Activate the virtual environment:
 
